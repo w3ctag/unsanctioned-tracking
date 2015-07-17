@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Control and Web Tracking</title>
+    <meta charset='utf-8'>
+    <script src='https://www.w3.org/Tools/respec/respec-w3c-common'
+            async class='remove'></script>
+    <script class='remove'>
+      var respecConfig = {
+          specStatus: "finding",
+          shortName:  "adhoc-tracking",
+          publishDate: "2015-07-17",
+          editors: [
+                {   name:       "Mark Nottingham",
+                    url:        "https://www.mnot.net/",
+    			}
+          ],
+
+          otherLinks: [{
+            key: 'Participate',
+            data: [{
+                      value: 'File a bug.',
+                      href: 'https://github.com/w3ctag/adhoc-tracking/issues'
+                  }, {
+                      value: 'Commit history.',
+                      href: 'https://github.com/w3ctag/adhoc-tracking/commits/gh-pages'
+                  }, {
+                      value: 'Mailing list.',
+                      href: 'https://lists.w3.org/Archives/Public/www-tag/'
+            }]
+          }],
+
+          wg:           "Technical Architecture Group",
+          wgURI:        "https://www.w3.org/2001/tag/",
+          wgPublicList: "www-tag",
+          wgPatentURI:  "https://www.w3.org/2001/tag/disclosures",
+          edDraftURI: "https://w3ctag.github.io/adhoc-tracking/",
+          noTOC: false,
+          localBiblio:  {
+              "spy-sandbox": {
+                  title:    "The Spy in the Sandbox – Practical Cache Attacks in Javascript"
+              ,   href:     "http://arxiv.org/pdf/1502.07373v2.pdf"
+              ,   authors:  [
+                      "Yossef Oren",
+                      "Vasileios P. Kemerlis",
+                      "Simha Sethumadhavan",
+                      "Angelos D. Keromytis"
+              ]
+              ,   publisher:  "Computer Science Department, Columbia University"
+              },
+              "confinement": {
+                  title:    "A Note on the Confinement Problem"
+              ,   href:     "http://research.microsoft.com/en-us/um/people/blampson/11-confinement/acrobat.pdf"
+              ,   authors:  [
+                      "Butler W. Lampson",
+              ]
+              ,   publisher:  "Xerox Palo Alto Research Center"
+              },
+              "udhr": {
+                  title:    "Universal Declaration of Human Rights"
+              ,   href:     "http://www.un.org/en/documents/udhr/"
+              ,   publisher:  "United Nations"
+              }
+          }
+      };
+    </script>
+</head>
+<body>
+  <section id="abstract">
+
+    <p>Tracking user activity on the Web using methods other than those defined for the purpose by the Web platform ("ad hoc tracking") is harmful to the Web, for a variety of reasons. This Finding details the TAG's stance on different forms of tracking, and how they should be addressed.</p>
+
+  </section>
+
+  <section>
+
+<h2>Tracking Your Activity on the Web</h2>
+
+<p>When you use the Web, the sites you visit -- including advertisements, analytics services, and other included content on them -- use various tools to collect information about who you are and what you do on the site. One of the best-known and most widespread is  cookies [[RFC6265]]. More recently, other mechanisms such as [[webstorage]] have been standardized to complement cookies. This is very common on the Web; many sites that you browse will share what you do on them with several others -- in some cases, dozens.</p>
+
+<p>Collectively, these standards-defined tracking technologies form the basis of common Web features like shopping carts, persistent site preferences, and behavioral advertising, which allows many Web sites to fund themselves.</p>
+
+<p>They are a recognized part of the Web platform because their operation is defined by Web standards, and their design takes into account user needs for privacy and control over data flows.</p>
+
+<p>In particular, browsers provide explicit ways for you to limit when standards-defined tracking technologies are used, either directly or with extensions. For example, a privacy-conscious user can choose to use a cookie blocker. As such, the standards-defined tracking technologies are effectively "opt out" -- while they are on by default, you remain in control of them, as long as you accept that sites may not work as well (or at all) if you don't allow their use.</p>
+
+<p>Standards-defined tracking mechanisms also have the benefit of transparency. Users can inspect cookies and other locally stored data and user agents can provide some notice to the user that data is stored by this site. Tools have been developed that enable those users specifically interested in awareness of the tracking of their online activity to document and visualize the use of cookies and tracking pixels; for example, <a href="https://www.mozilla.org/en-US/lightbeam/">Lightbeam</a>.</p> 
+
+<p>In practice, many end users do not themselves understand the details of the local storage mechanisms and their use for tracking. However, tracking based upon standards allows researchers, advocates and regulators can use leverage their visibility and tools to identify and evaluate the privacy-sensitive behavior of online tracking, thereby indirectly benefiting them.</p>
+
+</section>
+
+<section>
+<h2>Ad Hoc Tracking: Tracking without User Control</h2>
+
+<p>However, sites also track user activity outside of these well-defined mechanisms:</p>
+
+<ul>
+  <li><strong>Browser fingerprinting</strong> uses small variations in your Web browser implementation and configuration -- as well as that of your computer itself -- to uniquely identify it and correlate it with your activity.</li>
+
+  <li><strong>SuperCookies</strong> use implementation bugs, browser fingerprinting and other techniques to continue to identify you and correlate your activity even after you clear your cookies (e.g. "re-synchronizing" them).</li>
+
+  <li><strong>Header enrichment</strong> is performed by some network operators who add HTTP request headers that reveal their customers' identities to the Web sites they visit.</li>
+</ul>
+
+<p>Unlike standards-based tracking, the operation of these ad-hoc techniques is not defined by Web standards, is not user-visible, and it is not under user control. If you use the same browser to visit two different sites, it is technically possible for them to identify your browser and correlate your behavior between them (and any other site that they work with). While there are a few legitimate uses of such methods (e.g., combatting Denial of Service attacks, or providing greater certainty about user identity for sites such as banks), ad-hoc tracking is often used for purposes that many consider malicious.</p>
+
+<p>There is ample evidence that many sites already use such tracking methods. For more information, see resources like <a href="https://panopticlick.eff.org">Panoticlick</a>, <a href="http://samy.pl/evercookie/">Evercookie</a>, and <a href="http://dl.acm.org/citation.cfm?id=2516674">FPDetective</a>.</p>
+
+</section>
+<section>
+<h2>Why Ad Hoc Tracking is Harmful</h2>
+
+<p>Staying in control of personal data is important to many people, because data about a person -- in particular their activity on the Web -- can be used to understand how they think, work and live.  Users expect that their browsing information will be kept relatively private. This trust, and users controlling their experience, is a fundamental part of how the Web works.</p>
+
+<p>Recognizing the importance of this information in monetary terms, the World Economic Forum has <a href="http://www.weforum.org/reports/personal-data-emergence-new-asset-class">classified personal data as "a new asset class"</a> -- with the implication that if you are unable to control your data, you are on the losing side of a forced transaction.</p>
+
+<p>Furthermore, tracking users' activity without their consent or knowledge is also a blatant violation of the human right to privacy [[udhr]].</p>
+
+<p>As a result, a growing body of legal, social and technical constraints have developed around the use of standards-based tracking technology on the Web. Because they are well-defined, it is possible to discuss and regulate their use, as well as build tools to understand, visualize and control them.</p>
+
+<p>For example, the <a href="http://eucookiedirective.com/">EU Cookie Directive</a> regulates the use of cookies in that jurisdiction; browsers have cookie control interfaces and extensions, and researchers can plot how they are used on the Web.</p>
+
+<p>Ad hoc tracking, on the other hand, has little such affordance; it is difficult (and sometimes, impossible) to detect using purely technical means in the browser. It is not a well-defined specification, but instead an exploitation of certain aspects of how the Web works.</p>
+
+<p>The aggregate effect of ad hoc tracking is to undermine user trust in the Web itself. Moreover, if browsers cannot isolate activity between sites and offer user control over their data, they are unable to act as trusted agents for the user.</p>
+
+<p>Notably, ad hoc tracking can be harmful even if non-identifying data is shared, because it provides the linkage among disparate information streams across contextual boundaries. For example the sharing of an opaque fingerprint among a set of unrelated online purchases can provide enough information to enable advertisers to determine that user of that browser is pregnant -- and hence to target her with specific advertisements even before she has disclosed her pregnancy.</p>
+
+</section>
+<section>
+<h2>Limitations of Technical Solutions</h2>
+
+<p>We have had numerous discussions throughout the W3C about limiting the the browser fingerprinting "surface area" that a browser exposes, by reducing the variability in how browsers behave.  In those discussions, we have tried to consider the full span of characteristics about a user, their browser and their activities that may be tracked.</p>
+
+<p>While reducing fingerprinting surface area may mitigate some kinds of ad hoc tracking, it is inadequate to foil a determined adversary. The variety of documented techniques for browser fingerprinting, from enumerating the extensions installed in the browser to examining exactly how fonts are displayed on screens, continues to increase as new features are developed. /* citations needed */</p>
+
+<p>As an extreme example, it has now been shown possible [[spy-sandbox]] to "listen" to the CPU on a computer to detect mouse, network and other activity, using only some JavaScript in a Web page. This information can then be used in the machine fingerprint.</p>
+
+<p>In this environment, it is impractical for specification design to eliminate fingerprinting; not only would such restriction severely hobble the capability of the Web, it would also break a substantial amount of existing content. Moreover, theory confirms that we cannot expect to eliminate these problems on a general-purpose system: From a theoretical perspective, eliminating browser fingerprinting is essentially the same problem as eliminating covert channels [[confinement]].</p>
+
+<p>As a result, we cannot solve the issues that ad hoc tracking raises through solely technical means. At times, they may be more appropriately addressed through policy (e.g., legislation and/or regulation).</p>
+
+</section>
+<section>
+<h3>Findings</h3>
+
+<p>Therefore, the TAG:</p>
+
+<ul>
+
+<li>Finds that ad hoc tracking is actively harmful to the Web, because it is not under the control of users and not transparent.</li>
+
+<li>Believes that browser fingerprinting surface introduced by new Web specifications should be minimized. However, the TAG also recognizes that new functionality may entail new fingerprinting surface area. We will work with the Privacy Interest Group on a document detailing this.</li>
+
+<li>Finds that new local storage features and other potential tracking mechanisms should maintain and interoperate with existing user controls.</li>
+
+<li>Encourages browser vendors to expose appropriate controls to users who wish to minimize their fingerprinting surface area.</li>
+
+<li>Acknowledges that despite best efforts, technical solutions to ad hoc tracking are not able to completely prevent its use by a determined attacker. Instead, our focus should be on making sure that ad hoc tracking does not become "normal" on the Web.</li>
+
+<li>Encourages policy makers to be aware that ad hoc tracking may introduce privacy, security and consumer protection concerns within their jurisdiction, and to consider appropriate action.</li>
+
+</ul> 
+    
+    
+  </section>
+
+
+</body>
+</html>
