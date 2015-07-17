@@ -13,7 +13,7 @@
           editors: [
                 {   name:       "Mark Nottingham",
                     url:        "https://www.mnot.net/",
-    			}
+                }
           ],
           otherLinks: [{
             key: 'Participate',
@@ -67,12 +67,12 @@
 <body>
   <section id="abstract">
 
-    <p>Tracking user activity on the Web using methods other than those defined for the purpose by the Web platform ("unsanctioned tracking") is harmful to the Web, for a variety of reasons. This Finding details the TAG's stance on different forms of tracking, and how they should be addressed.</p>
+    <p>Tracking user activity on the Web using methods other than those defined for the purpose by the Web platform (&ldquo;unsanctioned tracking&rdquo;) is harmful to the Web, for a variety of reasons. This Finding details the TAG's stance on different forms of tracking, and how they should be addressed.</p>
 
   </section>
 
   <section id="sotd">
-      
+
     <p>This is a draft TAG Finding; it has no standing (yet).
 
   </section>
@@ -81,13 +81,13 @@
 
 <h2>Tracking Your Activity on the Web</h2>
 
-<p>When you use the Web, the sites you visit -- including advertisements, analytics services, and other included content on them -- use various tools to collect information about who you are and what you do on the site. One of the best-known and most widespread is  cookies [[RFC6265]]. More recently, other mechanisms such as [[webstorage]] have been standardized to complement cookies. This is very common on the Web; many sites that you browse will share what you do on them with several others -- in some cases, dozens.</p>
+<p>When you use the Web, the sites you visit &mdash; including advertisements, analytics services, and other included content on them &mdash; use various tools to collect information about who you are and what you do on the site. One of the best-known and most widespread is  cookies [[RFC6265]]. More recently, other mechanisms such as [[webstorage]] have been standardized to complement cookies. This is very common on the Web; many sites that you browse will share what you do on them with several others &mdash; in some cases, dozens.</p>
 
 <p>Collectively, these standards-defined tracking technologies form the basis of common Web features like shopping carts, persistent site preferences, and behavioral advertising, which allows many Web sites to fund themselves.</p>
 
 <p>They are a recognized part of the Web platform because their operation is defined by Web standards, and their design takes into account user needs for privacy and control over data flows.</p>
 
-<p>In particular, browsers provide explicit ways for you to limit when standards-defined tracking technologies are used, either directly or with extensions. For example, a privacy-conscious user can choose to use a cookie blocker. As such, the standards-defined tracking technologies are effectively "opt out" -- while they are on by default, you remain in control of them, as long as you accept that sites may not work as well (or at all) if you don't allow their use.</p>
+<p>In particular, browsers provide explicit ways for you to limit when standards-defined tracking technologies are used, either directly or with extensions. For example, a privacy-conscious user can choose to use a cookie blocker. As such, the standards-defined tracking technologies are effectively &ldquo;opt out&rdquo; &mdash; while they are on by default, you remain in control of them, as long as you accept that sites may not work as well (or at all) if you don't allow their use.</p>
 
 <p>Standards-defined tracking mechanisms also have the benefit of transparency. Users can inspect cookies and other locally stored data and user agents can provide some notice to the user that data is stored by this site. Tools have been developed that enable those users specifically interested in awareness of the tracking of their online activity to document and visualize the use of cookies and tracking pixels; for example, <a href="https://www.mozilla.org/en-US/lightbeam/">Lightbeam</a>.</p> 
 
@@ -101,9 +101,9 @@
 <p>However, sites also track user activity outside of these well-defined mechanisms:</p>
 
 <ul>
-  <li><strong>Browser fingerprinting</strong> uses small variations in your Web browser implementation and configuration -- as well as that of your computer itself -- to uniquely identify it and correlate it with your activity.</li>
+  <li><strong>Browser fingerprinting</strong> uses small variations in your Web browser implementation and configuration &mdash; as well as that of your computer itself &mdash; to uniquely identify it and correlate it with your activity.</li>
 
-  <li><strong>SuperCookies</strong> use implementation bugs, browser fingerprinting and other techniques to continue to identify you and correlate your activity even after you clear your cookies (e.g. "re-synchronizing" them).</li>
+  <li><strong>SuperCookies</strong> use implementation bugs, browser fingerprinting and other techniques to continue to identify you and correlate your activity even after you clear your cookies (e.g. &ldquo;re-synchronizing&rdquo; them).</li>
 
   <li><strong>Header enrichment</strong> is performed by some network operators who add HTTP request headers that reveal their customers' identities to the Web sites they visit.</li>
 </ul>
@@ -116,9 +116,9 @@
 <section>
 <h2>Why Unsanctioned Tracking is Harmful</h2>
 
-<p>Staying in control of personal data is important to many people, because data about a person -- in particular their activity on the Web -- can be used to understand how they think, work and live.  Users expect that their browsing information will be kept relatively private. This trust, and users controlling their experience, is a fundamental part of how the Web works.</p>
+<p>Staying in control of personal data is important to many people, because data about a person &mdash; in particular their activity on the Web &mdash; can be used to understand how they think, work and live.  Users expect that their browsing information will be kept relatively private. This trust, and users controlling their experience, is a fundamental part of how the Web works.</p>
 
-<p>Recognizing the importance of this information in monetary terms, the World Economic Forum has <a href="http://www.weforum.org/reports/personal-data-emergence-new-asset-class">classified personal data as "a new asset class"</a> -- with the implication that if you are unable to control your data, you are on the losing side of a forced transaction.</p>
+<p>Recognizing the importance of this information in monetary terms, the World Economic Forum has <a href="http://www.weforum.org/reports/personal-data-emergence-new-asset-class">classified personal data as &ldquo;a new asset class&rdquo;</a> &mdash; with the implication that if you are unable to control your data, you are on the losing side of a forced transaction.</p>
 
 <p>Furthermore, tracking users' activity without their consent or knowledge is also a blatant violation of the human right to privacy [[udhr]].</p>
 
@@ -130,17 +130,17 @@
 
 <p>The aggregate effect of unsanctioned tracking is to undermine user trust in the Web itself. Moreover, if browsers cannot isolate activity between sites and offer users control over their data, they are unable to act as trusted agents for the user.</p>
 
-<p>Notably, unsanctioned tracking can be harmful even if non-identifying data is shared, because it provides the linkage among disparate information streams across contextual boundaries. For example the sharing of an opaque fingerprint among a set of unrelated online purchases can provide enough information to enable advertisers to determine that user of that browser is pregnant -- and hence to target her with pregnancy-specific advertisements even before she has disclosed her pregnancy.</p>
+<p>Notably, unsanctioned tracking can be harmful even if non-identifying data is shared, because it provides the linkage among disparate information streams across contextual boundaries. For example the sharing of an opaque fingerprint among a set of unrelated online purchases can provide enough information to enable advertisers to determine that user of that browser is pregnant &mdash; and hence to target her with pregnancy-specific advertisements even before she has disclosed her pregnancy.</p>
 
 </section>
 <section>
 <h2>Limitations of Technical Solutions</h2>
 
-<p>We have had numerous discussions throughout the Web community about limiting the the browser fingerprinting "surface area" that a browser exposes, by reducing the variability in how browsers behave.  In those discussions, we have tried to consider the full span of characteristics about a user, their browser and their activities that may be tracked.</p>
+<p>We have had numerous discussions throughout the Web community about limiting the the browser fingerprinting &ldquo;surface area&rdquo; that a browser exposes, by reducing the variability in how browsers behave.  In those discussions, we have tried to consider the full span of characteristics about a user, their browser and their activities that may be tracked.</p>
 
 <p>While reducing fingerprinting surface area may mitigate some kinds of unsanctioned tracking, it is inadequate to foil a determined adversary. The variety of documented techniques for browser fingerprinting, from enumerating the extensions installed in the browser to examining exactly how fonts are displayed on screens, continues to increase as new features are developed.</p>
 
-<p>As an extreme example, it has now been shown possible [[spy-sandbox]] to "listen" to the CPU on a computer to detect mouse, network and other activity, using only some JavaScript in a Web page. This information can then be used in the machine fingerprint.</p>
+<p>As an extreme example, it has now been shown possible [[spy-sandbox]] to &ldquo;listen&rdquo; to the CPU on a computer to detect mouse, network and other activity, using only some JavaScript in a Web page. This information can then be used in the machine fingerprint.</p>
 
 <p>In this environment, it is impractical for specification design to eliminate fingerprinting; not only would such restriction severely hobble the capability of the Web, it would also break a substantial amount of existing content. Moreover, theory confirms that we cannot expect to eliminate these problems on a general-purpose system: From a theoretical perspective, eliminating browser fingerprinting is essentially the same problem as eliminating covert channels [[confinement]].</p>
 
@@ -162,13 +162,13 @@
 
 <li>Encourages browser vendors to expose appropriate controls to users who wish to minimize their fingerprinting surface area.</li>
 
-<li>Acknowledges that despite best efforts, technical solutions to unsanctioned tracking are not able to completely prevent its use by a determined attacker. Instead, our focus should be on making sure that unsanctioned tracking does not become "normal" on the Web.</li>
+<li>Acknowledges that despite best efforts, technical solutions to unsanctioned tracking are not able to completely prevent its use by a determined attacker. Instead, our focus should be on making sure that unsanctioned tracking does not become &ldquo;normal&rdquo; on the Web.</li>
 
 <li>Encourages policy makers to be aware that unsanctioned tracking may introduce privacy, security and consumer protection concerns within their jurisdiction, and to consider appropriate action.</li>
 
-</ul> 
-    
-    
+</ul>
+
+
   </section>
 
 
